@@ -14,9 +14,18 @@ export class NewsEditComponent implements OnInit {
     "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/7A23/production/_97176213_breaking_news_bigger.png",
     "publishedAt": "2019-02-12T02:06:04Z"
   };
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  delete(article): void {
+    console.log('delete');
+  }
+
+  update() {
+    console.log('update');
+  }
 }
