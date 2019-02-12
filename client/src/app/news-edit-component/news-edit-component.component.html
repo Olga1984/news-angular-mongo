@@ -1,14 +1,14 @@
 <div class="col-md-12">
-  <ul class="list-group" *ngFor="let article of articles">
-    <li class="list-group-item">
+  <div class="list-group">
+    <div class="list-group-item">
       <img [src]="article.urlToImage" style="height: 50px; width: auto; display: inline-block;">
       <h2>{{article.title}}</h2>
       <i>{{article.author}}</i>
       <p>{{article.description}}</p>
-    </li>
-  </ul>
-  <div class="text-right">
-  <button class="btn btn-info" title="edit article" (click)="update()">Update</button>
-  <button class="btn btn-danger" title="delete article" (click)="delete(article)">Delete</button>
+      <div class="text-right">
+        <button class="btn btn-info" title="edit article" (click)="update()">Update</button>
+        <button class="btn btn-danger" title="delete article" (click)="delete(article)">Delete</button>
+      </div>
+    </div>
   </div>
 </div>
