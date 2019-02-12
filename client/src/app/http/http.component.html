@@ -18,6 +18,22 @@
   </div>
 </div>
 <div class="col-md-12">
+<table *ngIf="active" class="table">
+  <tr *ngFor="let article of news">
+    <td class="text-left">
+      <a (click)="edit(article)">
+        <span *ngIf="article!==editArticle">{{article.title}}</span>
+        <input *ngIf="article===editArticle" [(ngModel)]="article.title" (blur)="update()">
+      </a>
+    </td>
+    <td class="text-right">
+      <button routerLink="/edit"class="btn btn-info" title="edit article" (click)="update()">Update</button>
+      <button routerLink="/edit"class="btn btn-danger" title="delete article" (click)="delete(article)">Delete</button>
+    </td>
+  </tr>
+</table>
+</div>
+<div *ngIf="!active" class="col-md-12">
 <ul class="list-group" *ngFor="let article of articles">
   <li class="list-group-item">
     <img [src]="article.urlToImage" style="height: 50px; width: auto; display: inline-block;"> 
