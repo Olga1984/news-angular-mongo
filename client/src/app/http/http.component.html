@@ -1,21 +1,22 @@
-<form class="form-horizontal" >
+<div class="form-horizontal justify-content-between" >
+  <div>
   <select (change)="onGet($event.target.value)">
     <option *ngFor="let i of chanels">{{i}}</option>
   </select>
-  <div class="form-group">
+  </div>
+  <div>
     <div class="">
       <div class="checkbox">
         <label><input type="checkbox"> only created by me</label>
       </div>
     </div>
   </div>
-
-  <div class="form-group">
+  <div >
     <div class="btn btn-default">
       <button routerLink="/create" class="btn btn-info">Add article</button>
     </div>
   </div>
-</form>
+</div>
 <div class="col-md-12">
 <ul class="list-group" *ngFor="let article of articles">
   <li class="list-group-item">
