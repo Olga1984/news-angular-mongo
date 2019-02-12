@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {News} from './news';
 import {NewsService} from './news.service';
 
@@ -9,6 +9,7 @@ import {NewsService} from './news.service';
   providers: [NewsService]
 })
 export class NewsComponent implements OnInit {
+  //@Input news: News[];
 news: News[];
 editArticle: News;
   constructor(private newsService: NewsService) { }

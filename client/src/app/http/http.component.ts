@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import {News} from "../news/news";
 
 @Component({
   selector: 'app-http',
@@ -10,6 +11,7 @@ export class HttpComponent implements OnInit {
   chanels: string[] = ['cnn', 'bbc-news', 'daily-mail', 'business-insider', 'mtv-news', 'hacker-news', 'the-guardian-uk', 'google-news', 'Bad Request!'];
   articles: any[] = [ ];
   filter: boolean = false;
+  news: News[];
   constructor(private apiService: ApiService){}
 
   ngOnInit() {
