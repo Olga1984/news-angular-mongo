@@ -7,7 +7,7 @@
   <div>
     <div class="">
       <div class="checkbox">
-        <label><input type="checkbox"> only created by me</label>
+        <label><input type="checkbox" id="1" [ngModel]="filter" (ngModelChange)="onFilterChange($event)"> only created by me</label>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
   </div>
 </div>
 <div class="col-md-12">
-<table *ngIf="active" class="table">
+<table *ngIf="filter" class="table">
   <tr *ngFor="let article of news">
     <td class="text-left">
       <a (click)="edit(article)">
@@ -33,7 +33,7 @@
   </tr>
 </table>
 </div>
-<div *ngIf="!active" class="col-md-12">
+<div *ngIf="!filter" class="col-md-12">
 <ul class="list-group" *ngFor="let article of articles">
   <li class="list-group-item">
     <img [src]="article.urlToImage" style="height: 50px; width: auto; display: inline-block;"> 

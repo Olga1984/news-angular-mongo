@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 export class HttpComponent implements OnInit {
   chanels: string[] = ['cnn', 'bbc-news', 'daily-mail', 'business-insider', 'mtv-news', 'hacker-news', 'the-guardian-uk', 'google-news', 'Bad Request!'];
   articles: any[] = [ ];
-  active: boolean = false;
+  filter: boolean = false;
   constructor(private apiService: ApiService){}
 
   ngOnInit() {
@@ -22,6 +22,9 @@ export class HttpComponent implements OnInit {
       },
       (error) => console.log(error)
     )
+  }
+  onFilterChange(eve: any) {
+    this.filter = !this.filter;
   }
 
 }
