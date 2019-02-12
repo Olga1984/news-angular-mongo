@@ -1,0 +1,47 @@
+<form class="form" (submit)="add(newsTitle.value); newsTitle.value=''">
+   <div class="col-md-6">
+    <div class="form-group">
+    <label for="newsTitle">Heading</label>
+     <input #newsTitle class="form-control" id="newsTitle" placeholder="News Name">
+    </div>
+    <div class="form-group">
+      <label for="newsDescription">short Description</label>
+     <input #newsDescription class="form-control" id="newsDescription" placeholder="News Description">
+    </div>
+    <div class="form-group">
+      <label for="newsContent">content</label>
+      <textarea class="form-control" id="newsContent" placeholder="News Description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="inputImage">image</label>
+      <input class="form-control" id="inputImage" placeholder="image">
+    </div>
+
+    <div class="form-group">
+      <label for="inputDate">Date</label>
+      <input type="password" class="form-control" id="inputDate" placeholder="date">
+    </div>
+
+    <div class="form-group">
+      <label for="inputUrl">Source Url</label>
+      <input class="form-control" id="inputUrl" placeholder="Url">
+    </div>
+  <input type="submit" value="Save" class="btn btn-success">
+  <input routerLink="/"type="submit" value="Cancel" class="btn btn-warning">
+  </div>
+</form>
+<table class="table">
+  <tr *ngFor="let article of news">
+    <td class="text-left">
+      <a (click)="edit(article)">
+        <span *ngIf="article!==editArticle">{{article.title}}</span>
+        <input *ngIf="article===editArticle" [(ngModel)]="article.title" (blur)="update()">
+      </a>
+    </td>
+    <td class="text-right">
+      <button class="btn btn-info" title="edit article" (click)="update()">Update</button>
+      <button class="btn btn-danger" title="delete article" (click)="delete(article)">Delete</button>
+    </td>
+  </tr>
+</table>
+

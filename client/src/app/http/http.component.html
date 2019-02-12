@@ -1,0 +1,12 @@
+<select (change)="onGet($event.target.value)">
+  <option *ngFor="let i of chanels">{{i}}</option>
+</select>
+<hr>
+<ul class="list-group" *ngFor="let article of articles">
+  <li class="list-group-item">
+    <img [src]="article.urlToImage" style="height: 50px; width: auto; display: inline-block;"> 
+    <h2>{{article.title}}</h2>
+    <i>{{article.author}}</i>
+    <p>{{article.description}}</p>
+  </li>
+</ul>
