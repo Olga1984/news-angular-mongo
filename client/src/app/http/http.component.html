@@ -1,7 +1,22 @@
-<select (change)="onGet($event.target.value)">
-  <option *ngFor="let i of chanels">{{i}}</option>
-</select>
-<hr>
+<form class="form-horizontal" >
+  <select (change)="onGet($event.target.value)">
+    <option *ngFor="let i of chanels">{{i}}</option>
+  </select>
+  <div class="form-group">
+    <div class="">
+      <div class="checkbox">
+        <label><input type="checkbox"> only created by me</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="btn btn-default">
+      <button routerLink="/create" class="btn btn-info">Add article</button>
+    </div>
+  </div>
+</form>
+<div class="col-md-12">
 <ul class="list-group" *ngFor="let article of articles">
   <li class="list-group-item">
     <img [src]="article.urlToImage" style="height: 50px; width: auto; display: inline-block;"> 
@@ -10,3 +25,5 @@
     <p>{{article.description}}</p>
   </li>
 </ul>
+  </div>
+

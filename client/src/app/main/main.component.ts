@@ -16,15 +16,15 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
-  onGet(){
-    this.apiService.getNews().subscribe(
-      (articles: any) => {
-        //console.log(servers)
-        this.articles = articles;
-      },
-      (error) => console.log(error)
-    )
-  }
+  // onGet(){
+  //   this.apiService.getNews().subscribe(
+  //     (articles: any) => {
+  //       //console.log(servers)
+  //       this.articles = articles;
+  //     },
+  //     (error) => console.log(error)
+  //   )
+  // }
   // news: News[];
   // editArticle: News;
   // constructor(private newsService: NewsService) { }
